@@ -5,7 +5,7 @@
  * @link https://github.com/softark/creole#readme
  */
 
-namespace softark\creole\block;
+namespace Creole\block;
 
 /**
  * Adds the code blocks

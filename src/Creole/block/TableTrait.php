@@ -5,7 +5,7 @@
  * @link https://github.com/softark/creole#readme
  */
 
-namespace softark\creole\block;
+namespace Creole\block;
 
 /**
  * Adds the table blocks
@@ -48,14 +48,38 @@ REGEXP;
             $row = [];
             foreach ($matches[0] as $text) {
                 $cell = [];
-                if (isset($text[0]) && $text[0] === '=') {
-                    $cell['tag'] = 'th';
-                    $cell['text'] = $this->parseInline(trim(substr($text, 1)));
-                } else {
-                    $cell['tag'] = 'td';
-                    $cell['text'] = $this->parseInline(trim($text));
-                    $header = false;
+
+                switch ($text[0]) {
+                    case '=':
+                        $cell['tag'] = 'th';
+                        $cell['text'] = $this->parseInline(trim(substr($text, 1)));
+
+                        break;
+                    case '/':
+                        $cellNum = substr($text, 1, strpos($text, '.')-1);
+
+                        $cell['tag'] = 'td rowspan="'.$cellNum.'"';
+                        $cell['text'] = $this->parseInline(trim(substr($text, 1)));
+
+                        break;
+                    case '\\':
+                        $cellNum = substr($text, 1, strpos($text, '.')-1);
+
+                        $cell['tag'] = 'td colspan="'.$cellNum.'"';
+                        $cell['text'] = $this->parseInline(trim(substr($text, 1)));
+
+                        break;
+                    case '-':
+                        $cell['tag'] = 'td nowrap';
+                        $cell['text'] = $this->parseInline(trim(substr($text, 1)));
+
+                        break;
+                    default:
+                        $cell['tag'] = 'td';
+                        $cell['text'] = $this->parseInline(trim($text));
+                        $header = false;
                 }
+
                 $row['cells'][] = $cell;
             }
             $row['header'] = $header;

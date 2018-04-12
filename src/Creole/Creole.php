@@ -5,7 +5,7 @@
  * @link https://github.com/softark/creole#readme
  */
 
-namespace softark\creole;
+namespace Creole;
 
 /**
  * Creole wiki parser for [Creole 1.0 spec](http://www.wikicreole.org/wiki/Creole1.0).
@@ -102,8 +102,8 @@ class Creole extends \cebe\markdown\Parser
 	protected function renderText($text)
 	{
 		return str_replace(
-			['&', '<', '>', "\\\\"],
-			['&amp;', '&lt;', '&gt;', $this->html5 ? "<br>" : "<br />"],
+			['&', '<', '>', "\\\\", '&nbsp;'],
+			['&amp;', '&lt;', '&gt;', $this->html5 ? "<br>" : "<br />", "&nbsp;"],
 			$text[1]);
 	}
 }

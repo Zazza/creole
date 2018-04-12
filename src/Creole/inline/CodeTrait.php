@@ -5,7 +5,7 @@
  * @link https://github.com/softark/creole#readme
  */
 
-namespace softark\creole\inline;
+namespace Creole\inline;
 
 /**
  * Adds inline code elements

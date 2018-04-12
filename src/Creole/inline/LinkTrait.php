@@ -5,7 +5,7 @@
  * @link https://github.com/softark/creole#readme
  */
 
-namespace softark\creole\inline;
+namespace Creole\inline;
 
 // work around https://github.com/facebook/hhvm/issues/1120
 defined('ENT_HTML401') || define('ENT_HTML401', 0);
