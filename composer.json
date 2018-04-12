@@ -13,10 +13,6 @@
 			"role": "Creator"
 		}
 	],
-	"support": {
-		"issues": "https://github.com/softark/creole/issues",
-		"source": "https://github.com/softark/creole"
-	},
 	"require": {
 		"php": ">=5.4.0",
 		"lib-pcre": "*",
@@ -28,16 +24,11 @@
 		"ezyang/htmlpurifier": "4.6.*"
 	},
 	"autoload": {
-		"psr-4": {
-			"softark\\creole\\": ""
+	        "psr-0": {
+			"Creole": "src/"
 		}
 	},
 	"bin": [
 		"bin/creole"
-	],
-	"extra": {
-		"branch-alias": {
-			"dev-master": "1.2.x-dev"
-		}
-	}
+	]
 }
