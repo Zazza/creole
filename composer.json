@@ -1,5 +1,5 @@
 {
-	"name": "Zazza/creole",
+	"name": "zazza/creole",
 	"description": "Creole Wiki parser for PHP extended from cebe/markdown",
 	"keywords": ["creole", "wiki", "parser"],
 	"homepage": "https://github.com/Zazza/creole#readme",
