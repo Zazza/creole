@@ -1,8 +1,8 @@
 {
-	"name": "softark/creole",
+	"name": "Zazza/creole",
 	"description": "Creole Wiki parser for PHP extended from cebe/markdown",
 	"keywords": ["creole", "wiki", "parser"],
-	"homepage": "https://github.com/softark/creole#readme",
+	"homepage": "https://github.com/Zazza/creole#readme",
 	"type": "library",
 	"license": "MIT",
 	"authors": [
